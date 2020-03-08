@@ -1,0 +1,27 @@
+:root{
+  --mainGrey: #d9d9d9;
+  --LightGrey: #e8e8e8;
+  --mainWhite: #f3f3f3;
+  --mainDark: #828282;
+  --mainBlue: #1414ff;
+}
+
+body{
+  font-family: "Roboto", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+}
+
+.text-title{
+  font-family: "Oswald", sans-serif;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.text-blue{
+  color:var(--mainBlue);
+}
+
+.text-bright{
+  color:var(--mainGrey);
+}
