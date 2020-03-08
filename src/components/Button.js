@@ -4,18 +4,19 @@ export const ButtonContainer = styled.button`
     font-size: 1.4rem;
     background: transparent;
     border: 0.05rem solid var(--mainDark);
-    color: var(--mainDark);
+    border-color:${props => props.cart? "var(--mainBlue)":"var(--mainDark)"};
+    color:${props => props.cart? "var(--mainBlue)":"var(--mainDark)"};
     border-radius: .5rem;
     padding: .2rem .5rem;
     cursor: pointer;
     margin: .2rem .5rem; 
     transition: all .5s ease-in-out;
     &:hover{
-    background: var(--lightBlue);
-    color: var(--mainGrey);
-    border: 0.05rem solid var(--mainGrey);
+        background: ${props => props.cart? "var(--mainBlue)":"var(--mainDark)"};
+        color: var(--mainGrey);
+        border: 0.05rem solid var(--mainGrey);
     }
     
     &:focus{
-    outline:none;
+        outline:none;
     }`
