@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from "react-router-dom";
+import NumberFormat from 'react-number-format';
 
 export default function CartTotals({value}) {
     const{cartSubtotal, cartTax, cartTotal, clearCart} = value;
@@ -20,18 +21,41 @@ export default function CartTotals({value}) {
                             <span className="text-title">
                                 subtotal:
                             </span>
-                            <strong>$ {cartSubtotal}</strong>
+                            <NumberFormat
+                                value={cartSubtotal}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                prefix={'$'}
+                                decimalScale ={2}
+                                fixedDecimalScale ={true}
+                                renderText={cartSubtotal => <strong>{cartSubtotal}</strong>} />
+
                         </h5>
                         <h5>
                             <span className="text-title">
                                 tax:
-                            </span><strong>$ {cartTax}</strong>
+                            </span>
+                            <NumberFormat
+                            value={cartTax}
+                            displayType={'text'}
+                            thousandSeparator={true}
+                            prefix={'$'}
+                            decimalScale ={2}
+                            fixedDecimalScale ={true}
+                            renderText={cartTax => <strong>{cartTax}</strong>} />
                         </h5>
                         <h5>
                             <span className="text-title">
                                 Total:
                             </span>
-                            <strong>$ {cartTotal}</strong>
+                            <NumberFormat
+                                value={cartTotal}
+                                displayType={'text'}
+                                thousandSeparator={true}
+                                prefix={'$'}
+                                decimalScale ={2}
+                                fixedDecimalScale ={true}
+                                renderText={cartTotal => <strong>{cartTotal}</strong>} />
                         </h5>
                     </div>
                 </div>

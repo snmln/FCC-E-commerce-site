@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import {ProductConsumer} from "../Context";
 import PropTypes from 'prop-types';
+import NumberFormat from 'react-number-format';
 
 export default class Product extends Component {
     render() {
-        const {id, title, img, price, inCart} = this.props.product;
+        const {id, title, img, price, inCart, company} = this.props.product;
+        //var NumberFormat = require('react-number-format');
 
         return (
             <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3 my-3">
@@ -17,7 +19,6 @@ export default class Product extends Component {
                                 className="img-container p-5"
                                 onClick={()=>{
                                     value.handleDetail(id);
-                                    value.openModal(id)
                                 }}>
                             <Link to="/details">
                                 <img src={img} alt="product" className="card-img-top"/>
@@ -27,6 +28,8 @@ export default class Product extends Component {
                                 disabled={inCart ? true : false}
                                 onClick={()=> {
                                 value.addToCart(id);
+                                    value.openModal(id)
+
                                 }
                                 } >
                                 {inCart ? (<p className="text-capitalize mb-0" disabled>In Cart</p>):(<i className="fa fa-cart-plus" />)}
@@ -38,9 +41,21 @@ export default class Product extends Component {
                     <div className="card-footer d-flex justify-content-between">
                         <p className="align-self-center mb-0">
                             {title}
-<h5 className="text-blue font-italic mb-0">
-    <span className="mr-1">${price}</span>
-</h5>
+                            <br/><strong>{company}</strong>
+                            <hr className="py-2 w-auto"></hr>
+                            <h5 className="text-blue font-italic mb-0">
+                                {/*<span>${price}</span>*/}
+
+                                <NumberFormat
+                                    value={price}
+                                    displayType={'text'}
+                                    thousandSeparator={true}
+                                    prefix={'$'}
+                                    decimalScale ={2}
+                                    fixedDecimalScale ={true}
+                                    renderText={price => <span>{price}</span>} />
+
+                            </h5>
                         </p>
                     </div>
                 </div>

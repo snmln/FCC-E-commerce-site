@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {ProductConsumer} from '../Context'
 import {Link} from "react-router-dom";
 import {ButtonContainer} from "./Button";
+import NumberFormat from 'react-number-format';
 
 export default class Details extends Component {
     render() {
@@ -31,7 +32,19 @@ export default class Details extends Component {
                                         made by: <span className="text-uppercase">
                                         {company}</span>
                                     </h4>
-                                    <h4 className="text-blue"><strong><span>${price}</span></strong></h4>
+
+                                    <h4 className="text-blue">
+                                        <strong>
+                                            <NumberFormat
+                                                value={price}
+                                                displayType={'text'}
+                                                thousandSeparator={true}
+                                                prefix={'$'}
+                                                decimalScale ={2}
+                                                fixedDecimalScale ={true}
+                                                renderText={price => <span>{price}</span>} />{/*<span>${price}</span>*/}
+                                        </strong>
+                                    </h4>
                                     <p className="text-capitalize font-weight-bold mt-3 mb-0"> some info about the product</p>
                                     <p className="text-muted lead">{info}</p>
                                     {/*Buttons*/}
