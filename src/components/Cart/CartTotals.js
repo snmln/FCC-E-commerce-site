@@ -12,7 +12,7 @@ export default function CartTotals({value}) {
                         <Link to="/">
                             <button className="btn-outline-danger text-uppercase mb-3 px-5"
                                     type="button"
-                                    onClick={() => clearCart}>
+                                    onClick={() => clearCart()}>
                                 clear cart
                             </button>
                         </Link>
