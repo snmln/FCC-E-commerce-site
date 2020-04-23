@@ -5,7 +5,7 @@ import {ButtonContainer} from "./Button";
 import {Link} from "react-router-dom";
 
 
-export default class Modal extends Component {
+class Modal extends Component {
     render() {
         return (
             <ProductConsumer>
@@ -49,6 +49,8 @@ export default class Modal extends Component {
         );
     }
 }
+
+export default Modal;
 
 const ModalContainer = styled.div`
   position:fixed;

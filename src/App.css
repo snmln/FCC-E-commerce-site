@@ -1,9 +1,15 @@
 :root{
-  --mainGrey: #BABBC5 ;
+  --mainGrey: #d9d9d9;
   --LightGrey: #e8e8e8;
-  --mainWhite: #f3f3f3;
+<<<<<<< HEAD
+  --mainWhite: #ffffff;
   --mainDark: #0E1024 ;
   --mainBlue: #C94343 ;
+=======
+  --mainWhite: #f3f3f3;
+  --mainDark: #828282;
+  --mainBlue: #1414ff;
+>>>>>>> parent of 33ca9fa... Changing products and updates
 }
 
 body{
@@ -13,9 +19,14 @@ body{
 }
 
 .text-title{
-  font-family: "Oswald", sans-serif;
+  font-family: 'Rubik', sans-serif;
   letter-spacing: 0.3rem;
   text-transform: uppercase;
+}
+
+.company-name{
+  font-family: 'Rubik', sans-serif !important;
+  font-size: 0.8rem !important;
 }
 
 .text-blue{

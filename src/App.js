@@ -18,6 +18,9 @@ function App() {
             <Route path="/details" component={Details} />
             <Route path="/cart" component={Cart} />
             <Route component={Default} />
+
+
+
         </Switch>
         <Modal />
     </React.Fragment>
